@@ -4,13 +4,14 @@ import random
 #environment
 turtle.title('Race game')
 p1 = turtle.Turtle()
+p2 = turtle.Turtle()
 
 #player-1 setup
 p1.shape("turtle")
 p1.color("red")
 
 #player-2 setup
-p2 = p1.clone()
+p2.shape("turtle")
 p2.color("blue")
 
 #player-1 endpoint setup
