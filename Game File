@@ -1,0 +1,58 @@
+import turtle
+import random
+
+#environment
+turtle.title('Race game')
+p1 = turtle.Turtle()
+
+#player-1 setup
+p1.shape("turtle")
+p1.color("red")
+
+#player-2 setup
+p2 = p1.clone()
+p2.color("blue")
+
+#player-1 endpoint setup
+p1.penup()
+p1.goto(150,70)
+p1.pendown()
+p1.circle(50)
+p1.penup()
+p1.goto(-150,120)
+p1.pendown()
+
+#player-2 endpoint setup
+p2.penup()
+p2.goto(150,-40)
+p2.pendown()
+p2.circle(50)
+p2.penup()
+p2.goto(-150,0)
+p2.pendown()
+
+#gamerules
+turns= [1, 2 , 3 , 4 , 5 ,6]
+for i in range(20):
+  if p1.pos()>= (110,120):
+    p1.penup()
+    print("Player-1 is winner!")
+    break
+  elif p2.pos()>= (110,0):
+    p2.penup()
+    print("Player-2 is winner!")
+    break
+  else:
+    p1_turn =input("Press Enter to roll the dice.")
+    result= random.choice(turns)
+    print("The result of dice roll is:",result)
+    step = result*15
+    print("The number of steps will be:",step)
+    p1.fd(step)
+    
+    p2_turn = input("Press Enter to roll the dice.")
+    r= random.choice(turns)
+    print("The result of dice roll is:",r)
+    s = r*15
+    print("The number of steps will be:",s)
+    p2.fd(s)
